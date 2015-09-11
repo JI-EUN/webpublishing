@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>회원가입실습</title>
+		
+	</head>
+
+	<body>
+		<form action="/" method="post">
+		<fieldset>
+			<legend>회원정보 입력</legend> <hr /> 
+			<ul>
+				<li> <label for="name">*사용자이름 <input id="name" type="text" /></label></li> <hr />
+				<li> <label for="id"> *아이디 <input id="id" type="text"> <input type="button" value="중복확인"/></label>
+					<h5><p>- 영문, 숫자 조합으로 6~20자까지 사용가능합니다.</p>
+                   - 첫 글자는 영문으로 설정해 주십시오.</h5></li> <hr />
+				<li><label for="password">*비밀번호 <input id="password" type="password"/ ></label>
+					<h5><p>- 영문, 숫자, 특수 문자 조합으로 8~20자까지 사용가능합니다.(영문은 대소문자 구분)</p>- 유출되기 쉬운 비밀번호는 등록할 수 없습니다. (예:111, abcd, password 등)</h5></li> <hr />
+				<li><label for="check">*비밀번호 확인<input id="check" type="password" /> </label></li> <hr />
+				<li><label for="email">*이메일 <input id="email" type="text" /> @ <input type="text" /> 
+					<select>
+						<option>직접입력</option>
+						<option>naver.com(네이버)</option>
+						<option>hanmail.net(한메일)</option>
+						<option>gmail.com(지메일)</option>
+					</select> </label></li> <hr />
+				<li><label for="call">연락처<input id="call" type="text"/> - <input type="text" /> - <input type="text"/> </label></li> <hr />
+				<li><label for="phone">휴대전화
+					<select>
+						<option>010</option>
+						<option>011</option>
+						<option>016</option>
+						<option>018</option>
+						<option>019</option> - <input id="phone" type="text" /> - <input type="text" />
+					</select></label></li> <hr />
+				<li><label for="adress">*주소</label> <input id="adress" type="text" /> - <input type="text" /> <input type="button" value="주소찾기"/ >
+					<input type="text" />
+					<input type="text" />
+				</li>
+			</ul>
+            <input type="submit" value="회원가입" />
+		</fieldset>
+		</form>
+		
+	</body>
+</html>
