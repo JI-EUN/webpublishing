@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>2depth_menue</title>
+		<style>
+
+
+*{margin:0;padding:0;}
+li{list-style: none;}
+a{text-decoration: none}
+
+.fulldownmenue{border:1px pink solid; height: 40px;}
+.fulldownmenue>ul>li{float:left;width:20%;text-align: center;line-height: 40px;}
+.fulldownmenue ul .sub_menue{border:1px blue solid;position:absolute;width:100%;display: none;left:0;}
+.fulldownmenue ul .sub_menue ul li{float:left;margin:0 20px}
+.fulldownmenue ul .sub_menue ul{position: relative}
+.fulldownmenue>ul>li:hover .sub_menue{display: block}
+.fulldownmenue ul .sub_menue>ul{position:relative;}
+.fulldownmenue>ul>li:nth-child(2) .sub_menue>ul{left:300px}
+.fulldownmenue>ul>li:nth-child(3) .sub_menue>ul{left:670px}
+.fulldownmenue>ul>li:nth-child(4) .sub_menue>ul{left:1030px}
+.fulldownmenue>ul>li:nth-child(5) .sub_menue>ul{left:1330px}
+.fulldownmenue ul .sub_menue ul .third{border:1px black solid;position:absolute;left:0;display:none;}		
+.fulldownmenue ul .sub_menue>ul>li:hover .third{display: block}
+</style>
+	</head>
+	<body>
+		<div class="fulldownmenue">
+			<ul>
+				<li><a href="">menue</a>
+				  <div class="sub_menue">	
+					<ul>
+						<li><a href="">sb_ue</a>
+							<div class="third">
+							<ul>
+								<li>ssb1</li>
+								<li>ssb1</li>
+							</ul>
+							</div>
+						</li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+					</ul>
+				   </div>	
+				</li>
+				
+				<li><a href="">menue</a>
+					<div  class="sub_menue">	
+					<ul>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+					</ul>
+				   </div>	
+				</li>
+				
+				<li class="on"><a href="">menue</a>
+					<div  class="sub_menue" >	
+					<ul>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+					</ul>
+				   </div>	
+				</li>
+				
+				<li><a href="">menue</a>
+					<div  class="sub_menue">	
+					<ul>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+					</ul>
+				   </div>	
+				</li>
+				
+				<li><a href="">menue</a>
+					<div  class="sub_menue" >	
+					<ul>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+						<li><a href="">sb_ue</a></li>
+					</ul>
+				   </div>	
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+	</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <<style>
+    *{margin:0;padding:0;}
+ul{list-style: none;}
+img{vertical-align:top;}
+.slide{width:350px; height:300px; border:1px black solid; margin:0 auto;position:relative}
+.slide li{border:1px red solid; width:310px; margin:20px;position:absolute; text-align: center;top:0;display:none;}
+.slide button{position:absolute;top:50%;z-index:1}
+.slide button.next{left:0}
+.slide button.prev{right:0;}
+.slide div{overflow:hidden;}
+.slide div img{width:100%;height: 220px}
+.slide li p{margin-top:20px}
+.slide ul li.on{display:block}
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <button class="next" >next</button>
+        <button class="prev">prev</button>
+        <ul>
+            <li class="on"><div><img src="http://cache.desktopnexus.com/thumbseg/2017/2017235-bigthumbnail.jpg"><div>
+                <p>text1</p></li>
+            <li><div><img src="http://cache.desktopnexus.com/thumbseg/2017/2017652-bigthumbnail.jpg"><div>
+                <p>text2</p></li>
+            <li><div><img src="http://cache.desktopnexus.com/thumbseg/2016/2016530-thumbnail.jpg"><div>
+                <p>text3</p></li>
+        </ul>
+</body>
+</html>

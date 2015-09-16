@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>banner</title>
+		<style>
+
+*{margin:0;padding:0}
+ul{list-style: none;}
+.banner{border:1px black solid;height:430px;text-align: center;}
+.banner li div{border:1px red solid;position:absolute;top:0;left:0;display:none;width:100%}
+.banner li.on div{display:block;}
+.banner li>a{ position:relative; z-index: 1; border:1px solid red; top:400px;display:block; width:20px;height: 20px;}
+.banner li{display: inline-block;}
+
+
+
+</style>
+	</head>
+
+	<body>
+		<div class="banner">
+			<ul>
+				<li class="on">
+					<a href="">1</a>
+					<div><img src="http://www.leebyunghun.kr/html/images/main/add_img01.jpg" /></div>
+				</li>
+				<li class="">
+					<a href="">2</a>
+					<div><img src="http://www.leebyunghun.kr/html/images/main/add_img02.jpg" /></div>
+				</li>
+				<li class="">
+					<a href="">3</a>
+					<div><img src="http://www.leebyunghun.kr/html/images/main/add_img03.jpg" /></div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
