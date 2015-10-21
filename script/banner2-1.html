@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        //그냥 해보기
+        // var idx=Math.floor(Math.random()*$('.slide li').size())
+        //
+        // $('.slide li').eq(idx).css('display','block');
+        // bucolor();
+        //
+        // var move= setInterval(function(){
+        //             $('.next').trigger('click')
+        //             },1000)
+        //
+        // $('.slide ul').hover(function(){
+        //     clearInterval(move)
+        // },function(){
+        //     move=setInterval(function(){
+        //                 $('.next').trigger('click')
+        //                 },1000)
+        // })
+        // function bucolor(){
+        //     $('.contral button').eq(idx).addClass('on').siblings().removeClass('on')
+        // }
+        //
+        // $('.slide .next').click(function(){
+        //     $('.slide li').eq(idx).stop().animate({
+        //         left:"-100%"
+        //     }).next().css({
+        //         'display':'block',
+        //         'left':'100%'
+        //     }).stop().animate({
+        //         left:0
+        //     })
+        //     idx++
+        //     if(idx==$('.slide li').size()){
+        //         idx=0;
+        //         $('.slide li').eq(idx).css({
+        //             'left':'100%',
+        //             'display':'block'
+        //         }).stop().animate({
+        //             left:0
+        //         })
+        //     }
+        //     bucolor();
+        // })
+        // $('.slide .prev').click(function(){
+        //     $('.slide li').eq(idx).stop().animate({
+        //         left:"100%"
+        //     }).prev().css({
+        //         'display':'block',
+        //         'left':'-100%'
+        //     }).stop().animate({
+        //         left:0
+        //     })
+        //     idx--
+        //     if(idx<0){
+        //         idx=$('.slide li').size()-1
+        //         $('.slide li').eq(idx).css({
+        //             'left':'-100%',
+        //             'display':'block'
+        //         }).stop().animate({
+        //             left:0
+        //         })
+        //     }
+        //     bucolor();
+        // })
+        var idx=0
+        function movement(st,end,index){
+                 $('.slide li').eq(index).css({
+                     'display':'block',
+                     'left':st
+                 }).animate({
+                     'left':end
+                 })
+                 if(index==$('.slide li').size()){
+                     idx=0
+                     movement('100%','0',idx)
+                 }else if(index<0){
+                     idx= $('.slide li').size()-1
+                     movement('-100%','0',idx)
+                 }
+        }
+        $('.next').click(function(){
+            movement('0','-100%',idx)
+            idx++
+            movement('100%',0,idx)
+        })
+        $('.prev').click(function(){
+            movement('0','100%',idx)
+            idx--
+            movement('-100%',0,idx)
+        })
+
+    })
+    </script>
+    <style>
+    *{margin:0; padding:0;}
+    ul{list-style-type: none;}
+    img{width:100%}
+    .slide{background: pink;width:500px;height:450px;margin:0 auto;position:relative;}
+    .slide ul {width:400px;height:400px;border:1px solid;left:20px;position:relative;left:50%;margin-left:-200px;text-align:center;overflow: hidden;}
+    .slide ul li:first-child{display:block}
+    .slide ul li{width:400px;height:400px;position:absolute;top:0;left:0;display:none;}
+    .slide button{position:absolute;top:40%;z-index: 11;}
+    .slide .next{right:0}
+    .contral {text-align: center;}
+    .contral .on{background: skyblue;}
+        </style>
+
+    </head>
+    <body>
+        <div class="slide">
+            <button class="next">다음</button>
+            <button class="prev">이전</button>
+            <ul>
+                <li><img src="../images/1.png" alt="1"></li>
+                <li><img src="../images/2.jpg" alt="2"></li>
+                <li><img src="../images/3.jpg" alt="3"></li>
+                <li><img src="../images/4.jpg" alt="4"></li>
+                <li><img src="../images/5.jpg" alt="5"></li>
+            </ul>
+        </div>
+
+        <div class="contral">
+            <button class="on">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+        </div>
+
+    </body>
+    </html>

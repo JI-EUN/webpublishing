@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+     var check= {
+         intro:function(){
+             var userName=prompt("이름을 입력하세요.")
+             var userScore=prompt("점수를 입력하세요.")
+             this.message(userName,userScore)
+         },
+         score:function(users){
+             if(users<=100 && users>=90){
+             return "수"
+                }
+         else if(users<90 && users>=80){
+             return "우"
+                }
+         else if(users<80 && users>=60){
+             return "미"
+                }
+         else if(users<60 && users>=40){
+             return "양"
+                }
+         else if(users<40 && users>=0){
+             return "가"
+                }
+         else {
+             return "숫자를 입력하세요."
+                }
+        },
+        ran_message:function(){
+            var messlist=["수고하셨습니다.","노력하셨습니다.","감사합니다",]
+            var rannum=Math.floor(Math.random()*messlist.length)
+            return messlist[rannum]
+        },
+        message:function(usern,users){
+            var tex= ""
+            tex += usern+"님의 점수는"
+            tex += users+"입니다."+"\n"
+            tex += " 따라서"+usern+"의 등급은"
+            tex += check.score(users)+"입니다."+"\n"
+            tex += check.ran_message()
+            alert(tex)
+
+        }
+
+     }
+
+        check.intro()
+        check.message()
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

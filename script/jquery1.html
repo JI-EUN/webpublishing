@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var scoreTable={
+                userPeoleArr:[],
+                userScoreArr:[],
+                adduser:function(){
+                        var userName=prompt("학생이름을 입력하세요.")
+                        var userScore=prompt("성적을 입력해주세요.")
+
+                        this.userPeoleArr.push(userName);
+                        this.userScoreArr.push(userScore);
+                    },
+                avge:function(){
+                    var avg=0;
+                    for(i in this.userPeoleArr){
+                        avg+=Number(this.userScoreArr[i])
+                    }
+
+                    return avg / this.userPeoleArr.length
+                },
+                print:function(){
+                    var tableTag=""
+                    tableTag+="<table>"
+                     for (i in this.uerPeopleArr){
+                         tableTag+="<tr>"
+                         tableTag+="<td>"+this.uerPeopleArr[i]+"</td>"
+                         tableTag+="<td>"+this.userScoreArr[i]+"</td>"
+                         tableTag+="</tr>"
+                     }
+                    tableTag+="</table>"
+                    $('.table').html(tableTag)
+                }
+            }
+
+            $('.adduser').click(function(){
+                scoreTable.adduser()
+            })
+
+            $('.avgscore').click(function(){
+                alert( "평균점수는 "+scoreTable.avge()+"입니다.")
+            })
+
+            $('.delet').click(function(){
+                scoreTable.userPeoleArr=[]
+                scoreTable.userScoreArr=[]
+            })
+
+            $('.total').click(function(){
+                scoreTable.print()
+            })
+        })
+
+
+
+    </script>
+</head>
+<body>
+
+    <input type="button" value="학생 입력" class="adduser"/>
+    <input type="button" value="테이블로 출력하기" class="total"/>
+    <input type="button" value="초기화" class="delet"/>
+    <input type="button" value="평균확인하기" class="avgscore"/>
+    <div class="table"></div>
+
+</body>
+</html>

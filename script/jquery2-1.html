@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <style>
+    *{margin:0;padding:0,}
+    html,body{height:100%;background-color:pink}
+    .wrapper{height:100%;width:1000px;margin:0 auto;}
+    .wrapper div{height:100%;border:1px solid; background-color:#fff}
+    .wing{height:150px;width:100px;border:1px solid;position:absolute;top:0;left:0}
+    </style>
+    <script>
+    //객체방식
+        var pageMove=[]
+        var pageSetting={
+                init:function(){
+                    //위치계산
+                    var wrapoffset= $('.wrapper').offset().left
+                    var wrapoffsetW =$('.wrapper').width()
+                    var wingposition= wrapoffset+wrapoffsetW
+
+                    return wingposition
+                },
+                wing:function(){
+                    //위치반영
+                    $('.wing').css('left',this.init()+10)
+                },
+                aniwing:function(sct){
+                    //배너움직임
+                    $('.wing').stop().animate({
+                        top:sct
+                    })
+                },
+                eventWing:function(){
+                    $(window).on({
+                        resize:function(){
+                            pageSetting.wing()
+                        },
+                        scroll:function(){
+                            pageSetting.aniwing($(this).scrollTop())
+                        }
+                    })
+                    $(window).trigger('resize')
+                },
+                moveNum:function(){
+                    $('.wrapper div').each(function(i,e){
+                        pageMove.push($(e).offset().top)
+                    })
+                    $('.wing li').click(function(){
+                        var inx =$(this).index()
+                        $('body,html').animate({
+                            scrollTop:pageMove[inx]
+                        })
+
+                    })
+                },
+                moveLi:function(){
+
+                }
+        }
+
+        console.log(pageMove)
+
+        $(window).load(function(){
+                pageSetting.eventWing()
+            })
+
+        $(document).ready(function(){
+            pageSetting.moveNum()
+       })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <div class="wing">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+</html>

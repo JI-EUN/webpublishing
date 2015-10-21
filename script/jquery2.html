@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <style>
+    *{margin:0;padding:0,}
+    html,body{height:100%;background-color:pink}
+    .wrapper{height:100%;width:1000px;margin:0 auto;}
+    .wrapper div{height:100%;border:1px solid; background-color:#fff}
+    .wing{height:150px;width:100px;border:1px solid;position:absolute;top:0;left:0}
+    </style>
+    <script>
+        $(function(){
+
+            var spotsction=[]
+            $('.wrapper div').each(function(i,e){
+                spotsction.push($(e).offset().top)
+            })
+            $('.wing li').click(function(){
+                var inx =$(this).index()
+
+                $('body,html').animate({
+                    scrollTop:spotsction[inx]
+                })
+
+            })
+
+            $(window).resize(function(){
+                wingbanner()
+            })
+            $(window).scroll(function(){
+                var scp=$(this).scrollTop()
+                $('.wing').stop().animate({
+                    top:scp
+                })
+            })
+
+            $(window).trigger('resize')
+            function wingbanner(){
+                var wrapoffset= $('.wrapper').offset().left
+                var wrapoffsetW =$('.wrapper').width()
+                var wingposition= wrapoffset+wrapoffsetW
+                $('.wing').css('left',wingposition+10)
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <div class="wing">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+</html>

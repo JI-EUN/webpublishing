@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var start = confirm("성적확인을 시작하시겠습니까?")
+        var userName=null;
+        var number
+
+        function intro(){alert("시작하겠습니다.")
+                        userName=prompt("이름을 입력하세요.")
+                        secore()}
+
+        function secore(){
+            var number= prompt("점수를 입력하세요.")
+            var text
+            if(number<=100 && number>=90){
+                text="수"
+            }
+            else if(number<90 && number>=80){
+                text="우"
+            }
+            else if(number<80 && number>=60){
+                text="미"
+            }
+            else if(number<60 && number>=40){
+                text="양"
+            }
+            else if(number<40 && number>=0){
+                text="가"
+            }
+            else {
+                text="숫자를 입력하세요."
+            }
+            ran_mess(text)
+        }
+
+        function ran_mess(text){
+            var messlist=["수고하셨습니다.","노력하셨습니다.","감사합니다",]
+            var rannum=Math.floor(Math.random()*messlist.length)
+            var messchoice=messlist[rannum]
+
+            var mass = ""
+            mass += userName+"님"+"\n"
+            mass += "시험점수 "+number
+            mass += "로 "+ text+ "입니다."+"\n"
+            mass += messchoice
+
+            alert( mass)
+        }
+
+
+
+        if(start){intro()}
+        else{document.write("꼭 하셔야 합니다.")}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

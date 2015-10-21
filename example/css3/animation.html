@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0}
+        ul{list-style:none;}
+        p{color:red}
+        p:target{color:pink}
+
+        div.menue{border:1px solid;width:200px; margin:0 auto; }
+               div>ul{border:1px solid; margin:10px}
+               div>ul>li{line-height:24px;padding:0 10px;border-top:1px violet solid;}
+               div>ul>li:first-child{border-top:0;}
+               div>ul>li>div{height:0;overflow:hidden;font-size:12px;line-height: 12px;}
+               div>ul>li>div:target{height:100px;overflow-y:scroll}
+
+    </style>
+</head>
+<body>
+    <a href="#aa">text</a>
+    <p id="aa">text</p>
+
+
+    <div class="menue">
+        <ul>
+            <li><a href="#firstMenu1">text</a>
+                <div id="firstMenu1">
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                </div>
+            </li>
+            <li><a href="#firstMenu2">text</a>
+                <div id="firstMenu2">
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                </div>
+            </li>
+            <li><a href="#firstMenu3">text</a>
+                <div id="firstMenu3">
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                </div>
+            </li>
+            <li><a href="#firstMenu4">text</a>
+                <div id="firstMenu4">
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                </div>
+            </li>
+            <li><a href="#firstMenu5">text</a>
+                <div id="firstMenu5">
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                    I'm working on creating a page with some CSS-animations (due to some of my customers dont want JavaScript heavy site). So I have one element I want to animate, but in 3 different ways based on which button is clicked:
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

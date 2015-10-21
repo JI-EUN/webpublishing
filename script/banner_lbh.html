@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var idx=0
+        $('.banner li a').eq(idx).addClass('on')
+        $('.banner li a').click(function(){
+            idx= $(this).text()-1
+            $('.banner li a').eq(idx).addClass('on').parent().find('div').fadeIn().parent().siblings().find('a').removeClass('on').parent().find('div').fadeOut()
+            return false
+        })
+        $('')
+    })
+
+    </script>
+    <style>
+    *{margin:0;padding:0}
+    ul{list-style-type: none;}
+    .banner ul{text-align: center;}
+    .banner ul li{display:inline-block;}
+    .banner ul li div{position:absolute;top:0;left:0;display:none;}
+    .banner ul li:first-child div{display:block}
+    .banner ul li a{z-index:12;position:relative;display:block;top:410px;width:20px;height:20px;color:#fff}
+    .banner ul li a.on,
+    .banner ul li a:hover{background-color:orange;}
+    .banner ul li div{background: pink;width:1903px;height:430px;margin:0 auto;}
+    </style>
+</head>
+<body>
+        <div class="banner">
+            <ul>
+                <li>
+                    <a>1</a>
+                    <div><img src="http://www.leebyunghun.kr/html/images/main/add_img01.jpg" alt=""></div>
+                </li>
+                <li>
+                    <a>2</a>
+                    <div><img src="http://www.leebyunghun.kr/html/images/main/add_img02.jpg" alt=""></div>
+                </li>
+                <li>
+                    <a>3</a>
+                    <div><img src="http://www.leebyunghun.kr/html/images/main/add_img03.jpg" alt=""></div>
+                </li>
+            </ul>
+        </div>
+</body>
+</html>

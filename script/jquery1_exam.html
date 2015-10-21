@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var party={
+                userName:[],
+                userWant:[],
+                foodPrice:[],
+
+                addUser:function(){
+                    var username=prompt("이름을 적어주세요.");
+                    var userwant=prompt("먹고싶은 것을 적어주세요.");
+                    var foodprice=prompt("음식의 가격을 적어주세요.(숫자로만 입력해주세요.)");
+
+                    this.userName.push(username);
+                    this.userWant.push(userwant);
+                    this.foodPrice.push(foodprice)
+                },
+                lot:function(){
+                    var rannum= this.ranDom(this.userName.length)
+                    this.printTable(this.userName[rannum],this.userWant[rannum])
+                    this.totalPrice(this.foodprice[rannum],this.userName)
+                },
+                ranDom:function(x){
+                    var data1= Math.floor(Math.random()*x.length)
+                    return data1
+                },
+                printTable:function(x,y){
+                    var tabletag=""
+                    tabletag+="<table>"
+                    tabletag+="<tr>"
+                    tabletag+="<td>"+x+"</td>"
+                    tabletag+="<td>"+y+"</td>"
+                    tabletag+="</tr>"
+                    tabletag+="</table>"
+
+                    $('.table').html(tabletag)
+                },
+                totalPrice:function(x,y){
+                    var totalprice= x*y.length
+                    return totalprice
+                }
+            }
+
+        $('.enter').click(function(){
+            party.addUser()
+        })
+
+        $('.random').click(function(){
+            party.printTable()
+            party.totalPrice()
+        })
+
+    })
+    </script>
+</head>
+<body>
+    <input type=button value="참가신청하기" class="enter"/>
+    <input type=button value="랜덤뽑기" class="random"/>
+    <div class="table"></div>
+</body>
+</html>

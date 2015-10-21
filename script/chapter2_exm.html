@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var name="주지은";
+        var message1="님 "
+        var number= Math.random()*100;
+        var date= Math.floor(number);
+
+        var ran_text=["로또","연금복권","이벤트","무료시사회"]
+        console.log(ran_text)
+        var text_data1= Math.random()*ran_text.length
+        var text_data2= Math.floor(text_data1)
+        var message2= ran_text[text_data2]
+
+        var final= name+message1+date+"일 뒤에 " +message2+"에 당첨되십니다."
+        document.write(final)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

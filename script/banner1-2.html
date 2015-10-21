@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+
+
+
+    <script>
+
+    $(document).ready(function(){
+        var ran=Math.floor(Math.random()*$('.slide li').length)
+        $('.slide li').eq(ran).addClass('on').css('display','block')
+
+
+        var inter = setInterval(function(){
+            $('.next').trigger('click')
+        },1000)
+
+        $('.slide ul').hover(function(){
+            clearInterval(inter)
+        },function(){
+            inter=setInterval(function(){
+                $('.next').trigger('click')
+            },1000)
+            })
+
+        function mouseOver(){
+            var idx=$('.slide li.on').index();
+
+            $('.contral button').eq(idx).addClass('on').siblings().removeClass('on')
+        }
+
+        $('.next').click(function(){
+            mouseOver()
+            var itemWidth = $('.slide ul').width()
+
+            $('.slide li.on').stop().animate({
+                left:-itemWidth
+            }).removeClass('on').next().addClass('on')
+            .css({
+                'display':'block',
+                'left':itemWidth
+            }).stop().animate({
+                left:0
+            })
+
+            var itemHtml = $('.slide li.on').html()
+
+            if(itemHtml == undefined){
+                $('.slide li').first().addClass('on').css({
+                    left:itemWidth
+                }).stop().animate({
+                    left:0
+                })
+            }
+        })
+        $('.prev').click(function(){
+            var itemWidth = $('.slide ul').width()
+            $('.slide li.on').stop().animate({
+                left:itemWidth
+            }).removeClass('on').prev().addClass('on').css({
+                'left':-itemWidth,
+                'display':'block'
+            }).stop().animate({
+                left:0
+            })
+            var itemHtml = $('.slide li.on').html()
+            if(itemHtml==undefined){
+                $('.slide li').last().addClass('on').css({
+                    left:-itemWidth
+                }).stop().animate({
+                    left:0
+                })
+            }
+            console.log()
+        })
+
+
+
+
+
+
+
+    })
+</script>
+<style>
+    *{margin:0; padding:0;}
+    ul{list-style:none;}
+    .slide{background:#000; width:485px; margin:0 auto}
+    .slide ul{width: 445px;height: 676px;
+        border:1px #F00 solid; position:relative; left:20px;overflow: hidden;}
+    .slide li{position:absolute; display: none; left:0;width:100%;height:100%}
+    .contral{text-align:center}
+    .contral .on{background-color:blue}
+    </style>
+
+</head>
+<body>
+    <div class="slide">
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        <ul>
+            <li><img src="../images/1.png" alt="1"></li>
+            <li><img src="../images/1.png" alt="2"></li>
+            <li><img src="../images/1.png" alt="3"></li>
+            <li><img src="../images/1.png" alt="4"></li>
+            <li><img src="../images/1.png" alt="5"></li>
+        </ul>
+    </div>
+
+    <div class="contral">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+
+</body>
+</html>

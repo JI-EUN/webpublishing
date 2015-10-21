@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var user_name=["황정음","정수정","한가인","김수현","이성열","김태희","츈데례"];
+        var name_data1=Math.random()*user_name.length
+        var name_data2=Math.floor(name_data1)
+        var name_choice=user_name[name_data2]
+        var title="신이 "+name_choice+ "을(를) 만들때"
+
+        var first_text=["우선","일단", "먼저"]
+        var first_text_data1=Math.random()*first_text.length
+        var first_text_data2=Math.floor(first_text_data1)
+        var first_text_choice=first_text[first_text_data2]
+
+        var first_element=[" 예쁨"," 재력"," 귀여움"," 두뇌"," 착함"," 센스"," 인기"," 자존심"," 잘생김"," 지혜로움"," 뻔뻔함"," 고독함" ]
+        var first_element_data1=Math.random()*first_element.length
+        var first_element_data2=Math.floor(first_element_data1)
+        var first_element_choice=first_element[first_element_data2]
+
+        var spoon=[" 한숟갈"," 두숟갈"," 세숟갈"," 1스푼"," 2스푼"," 아주 쬐끔"," 쬐끔", " 넉넉히"]
+        var spoon_data1=Math.random()*spoon.length
+        var spoon_data2=Math.floor(spoon_data1)
+        var spoon_choice=spoon[spoon_data2]
+
+        document.write(title)
+        document.write("어디보자 " +name_choice+"을(를) 만들어 볼까 ")
+        document.write(first_text_choice + first_element_choice+ spoon_choice)
+
+
+
+    </script>
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>
