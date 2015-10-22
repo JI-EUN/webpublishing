@@ -30,12 +30,12 @@
                 if(idx==3){
                     idx=0}
         }
-        var auTO =setInterval( function(){fadeInOut('next');}, 1000);
+        var auTO =setInterval( function(){fadeInOut('next');}, 2000);
 
         $('.banner ul').hover(function(){
             clearInterval(auTO)
         },function () {
-            auTO =setInterval( function(){fadeInOut('next');}, 1000);
+            auTO =setInterval( function(){fadeInOut('next');}, 2000);
         })
 
 
@@ -46,19 +46,19 @@
     </script>
     <style>
     *{margin:0;padding:0}
-     ul{list-style-type: none;}
-     img{vertical-align:top;}
-     .banner ul{text-align: center;}
-     .banner ul li{display:inline-block;}
-     .banner li:nth-child(1) div{background:#D0D0CE}
-     .banner li:nth-child(2) div{background:#B7B9B8}
-     .banner li:nth-child(3) div{background:#061823}
-     .banner ul li div{position:absolute;top:0;left:0;display:none;background: pink;width:100%;}
-     .banner ul li div img{width:100%; height:auto; max-width:1100px; max-height:430px;}
-     .banner ul li:first-child div{display:block}
-     .banner ul li a{z-index:12;position:relative;display:block;width:20px;height:20px;text-indent: -9999px;background-image:url("../images/withe.png");margin-left:20px}
-     .banner ul li a.on,
-     .banner ul li a:hover{background-color:orange;background:url("../images/orange.png")}
+    ul{list-style-type: none;}
+    img{vertical-align:top;}
+    .banner ul{text-align: center;}
+    .banner ul li{display:inline-block;}
+    .banner li:nth-child(1) div{background:#D0D0CE}
+    .banner li:nth-child(2) div{background:#B7B9B8}
+    .banner li:nth-child(3) div{background:#061823}
+    .banner ul li div{position:absolute;top:0;left:0;display:none;background: pink;width:100%;}
+    .banner ul li div img{width:100%; height:auto; max-width:1100px; max-height:430px;}
+    .banner ul li:first-child div{display:block}
+    .banner ul li a{z-index:12;position:relative;display:block;width:20px;height:20px;color:#fff;text-indent: -9999px;background:url("../withe.jpg");border:1px solid;}
+    .banner ul li a.on,
+    .banner ul li a:hover{background-color:orange;background:url("")}
     </style>
 </head>
 <body>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>fade banner</title>
+      <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript">
+      var idx;
+      var fadeBanner = {
+                  fadeFn:function () {
+
+                        idx=0;
+
+                        fadeBanner.markUp();
+
+                        $('.fadeBn li').eq(idx).addClass('on').find('div').fadeIn();
+
+                        fadeBanner.dotTop();
+                        fadeBanner.dotClick();
+                        fadeBanner.setIntv();
+                  },
+                  markUp:function () {
+                        $('body').append('<div class="fadeBn"></div>');
+                        $('.fadeBn').append('<ul></ul>');
+                        $('.fadeBn ul')
+                        .append('<li><img src="http://www.leebyunghun.kr/html/images/main/add_img01.jpg" alt="image1" /></li>')
+                        .append('<li><img src="http://www.leebyunghun.kr/html/images/main/add_img02.jpg" alt="image2" /></li>')
+                        .append('<li><img src="http://www.leebyunghun.kr/html/images/main/add_img03.jpg" alt="image3" /></li>');
+
+                        $('.fadeBn ul li img').before('<div></div>').after('<a href="#"></a>');
+                        $('.fadeBn ul li:eq(0) img').appendTo($('.fadeBn ul li:eq(0) div'));
+                        $('.fadeBn ul li:eq(1) img').appendTo($('.fadeBn ul li:eq(1) div'));
+                        $('.fadeBn ul li:eq(2) img').appendTo($('.fadeBn ul li:eq(2) div'));
+
+                  },
+                  dotTop:function () {
+                        $(window).on({
+                              resize:function () {
+                                    var aTop = $('.fadeBn li div').height()-30;
+                                    console.log(aTop)
+                                    $('.fadeBn li').find('a').css('top',aTop)
+                              }
+                        });
+
+                        $(window).trigger('resize');
+                  },
+                  dotClick:function () {
+                        $('.fadeBn li').click(function () {
+                              idx = $(this).index();
+                              console.log(idx)
+                              $('.fadeBn li').eq(idx).addClass('on').find('div').fadeIn(1000)
+                              .parent().siblings().removeClass('on').find('div').fadeOut(1000)
+                        });
+
+                        return false;
+                  },
+                  fadeEv:function () {
+
+                        $('.fadeBn li').eq(idx).find('div').fadeOut(1000).parent('li').removeClass('on')
+                        .next().addClass('on').find('div').fadeIn(1000);
+
+                        idx ++;
+
+                        if(idx == $('.fadeBn li').length){
+                              idx = 0;
+                              $('.fadeBn li').eq(idx).addClass('on').find('div').fadeIn(1000);
+                        }
+                  },
+                  setIntv:function () {
+                        var rel = setInterval(function () {
+                              fadeBanner.fadeEv();
+                        },1500);
+
+                        $('.fadeBn').on({
+                              mouseenter:function () {
+                                    clearInterval(rel)
+                              },
+                              mouseleave:function () {
+                                    rel = setInterval(function () {
+                                          fadeBanner.fadeEv();
+                                    },1500);
+                              }
+                        })
+                  }
+            };
+      $(window).load(function () {
+            fadeBanner.fadeFn();
+      })
+
+
+      $(function () {
+            // $(window).on({
+            //       resize:function () {
+            //             var aTop = $('.fadeBn li div').height()-30;
+            //             console.log(aTop)
+            //             $('.fadeBn li').find('a').css('top',aTop)
+            //       }
+            // })
+            //
+            // $(window).trigger('resize')
+      })
+
+      </script>
+      <style>
+
+      *{margin:0; padding:0;}
+      ul{list-style:none}
+      img{vertical-align: top;}
+
+      .fadeBn ul{width:100%; position:relative; text-align:center;}
+      .fadeBn ul li div{width:100%; position:absolute; left:0; top:0; overflow:hidden;display:none;}
+      .fadeBn ul li div img{width:100%; height:auto; max-width:1100px; max-height:430px;}
+      .fadeBn ul li:first-child div{background-color:#CFCFCD;}
+      .fadeBn ul li:first-child+li div{background-color:#B7B9B8;}
+      .fadeBn ul li:first-child+li+li div{background-color:#061823;}
+      .fadeBn ul li{display:inline-block;}
+      .fadeBn ul li a{display:block; width:20px; height:20px; background:url(http://www.leebyunghun.kr/html/images/main/key_visual_num.png) no-repeat left top; margin:0 10px; position:relative; z-index:10;}
+      .fadeBn ul li a:hover,
+      .fadeBn ul li.on a{background-position:left bottom;}
+
+      </style>
+</head>
+<body>
+
+</body>
+</html>
