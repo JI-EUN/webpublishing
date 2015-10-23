@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            function blind(){
+                $('body').append('<div class="blind"></div>');
+                $('.blind').fadeTo(1000,0.5)
+            }
+            function popup(select){
+                blind()
+                select.append('<button class="close">닫기</button>')
+                // select.animate({'opacity':1,
+                //                 'top':'50%',
+                //                 'left':'50%',
+                //                 'marginLeft':'-225px'},
+                //                 2000)
+                 select.fadeIn(2000,function(){
+                   $(this).animate({'top':'50%'},function(){
+                        $(this).animate({'top':'20%'},1000)
+                   })
+               })
+            }
+            function close(){
+                $('.blind').fadeOut(function(){
+                    $(this).remove()
+                })
+                $('.box').fadeOut(function(){$('.close').remove()})
+            }
+            $('button').click(function(){
+                var idx=$(this).index()
+                console.log($('.box').eq(idx).html())
+              popup($('.box').eq(idx))
+
+            })
+            $('.box').on('click','.close',function(){
+                close()
+            })
+        })
+    </script>
+    <style>
+    .blind{position:absolute;top:0;left:0;bottom:0;right:0;background:#000;display:none;}
+    .box{display:none;width:450px;height:400px;border:1px solid;position:absolute;top:-500px;z-index:1;background:#fff}
+    </style>
+</head>
+<body>
+
+    <button class="butn">팝업</button>
+    <button class="butn">팝업</button>
+    <div class="box pop1">1</div>
+    <div class="box pop2">2</div>
+
+
+
+
+</body>
+</html>
