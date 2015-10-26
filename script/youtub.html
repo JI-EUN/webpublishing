@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.movlist li').click(function(){
+            $(this).css({'opacity':'0.5'}).siblings().css('opacity','1')
+         var movurl=$(this).children('input').val()
+         $('iframe').attr('src','https://www.youtube.com/embed/'+movurl+'?controls=0&amp;showinfo=0')
+        })
+    })
+
+
+    $("div.enterleave").mouseenter(function() {
+      n += 1;
+      $(this).find("span").text( "mouse enter x " + n );
+    }).mouseleave(function() {
+      $(this).find("span").text("mouse leave");
+    });
+
+
+
+    </script>
+
+</head>
+<body>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/42Gtm4-Ax2U?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+<ul class="movlist">
+    <li>
+        <img src="../images/2.jpg" alt="">
+        <input type="hidden" value="4OrCA1OInoo"></input>
+    </li>
+    <li>
+        <img src="../images/2.jpg" alt="">
+        <input type="hidden" value="nVCubhQ454c"></input>
+    </li>
+    <li>
+        <img src="../images/2.jpg" alt="">
+        <input type="hidden" value="ECMc1SB60E0"></input>
+    </li>
+    <li>
+        <img src="../images/2.jpg" alt="">
+        <input type="hidden" value="uLUvHUzd4UA"></input>
+    </li>
+</ul>
+</body>
+</html>
