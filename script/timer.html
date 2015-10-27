@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+
+    $('document').ready(function(){
+        var day=['일','월','화','수','목','금','토']
+
+        setInterval(vtime,1000)
+
+        function vtime(){
+        var time= new Date();
+
+        var hours,min,sec
+
+         hours=time.getHours();
+         min=time.getMinutes();
+         sec=time.getSeconds();
+
+         var timetext=""
+         timetext+=hours
+         timetext+=min
+         timetext+=sec
+
+
+         var timeContainer=[]
+
+         $('.time span').remove()
+         for(i=0;i<timetext.length;i++){
+
+            var timeInfo=timetext.substring(i,i+1)
+            timeContainer.push(timeInfo)
+
+            var spot=Number(timeContainer[i])*100
+
+            $('.time').append('<span></span>')
+            $('.time').children('span').eq(i).css({
+                'background-position':'0 '+'-'+ spot+'px'
+            })
+         }
+
+     }
+         var time= new Date();
+         var chour=9//time.getHours();
+
+        console.log(chour)
+
+        if(7<=chour&&chour<=18){
+            $('body').css('background-color','skyblue')
+        }else{$('body').css('background-color','pink')}
+
+
+    })
+
+
+
+
+    </script>
+    <style>
+    body{background-color:pink;}
+    .time span {display:inline-block;width:41px; height:57px;overflow: hidden; background-image: url(http://dept.galleria.co.kr/web/img/main/txt-num.png); font-size:0}
+    </style>
+</head>
+<body>
+
+    <div class="time">
+
+
+    </div>
+
+</body>
+</html>
