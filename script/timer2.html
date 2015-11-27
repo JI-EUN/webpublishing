@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <style>
+    body{background-color: #000; color:#FFF}
+	div{float:left; font-size:0;}
+	div span{border:1px #F00 solid; font-size:12px; display: inline-block; width: 41px;height: 57px;background: url(http://dept.galleria.co.kr/web/img/main/txt-num.png) no-repeat;}
+    </style>
+    <script>
+    $(function(){
+    		var time,Tdate,Tday,Tyear,THours,Tmin,Tsec;
+    		var hou = []
+    		var min = []
+    		var sec = []
+
+    		 dayarr = ["일","월","화","수","목","금","토"]
+
+    		setInterval(function(){
+    			realtime()
+    		},1000)
+
+    		//0 을 붙이는 기능
+    		function twoNum(tt){
+    			if(tt <= 9){
+    				return "0"+tt
+    			} else {
+    				return tt
+    			}
+    		}
+
+    		//실제시간은 만들어내는기능
+    		function realtime(){
+
+    		time = new Date();
+    		Tdate = time.getDate();
+    		Tday = time.getDay(); // 0~6
+    		Tyear = time.getFullYear();
+    		THours = time.getHours()-12;
+    		Tmin = time.getMinutes();
+    		Tsec = time.getSeconds();
+
+    		Tsec = twoNum(Tsec);
+    		Tmin = twoNum(Tmin);
+    		THours = twoNum(THours);
+
+    		imgTime(hou,THours,$('.h>span'))
+    		imgTime(min,Tmin,$('.m>span'))
+    		imgTime(sec,Tsec,$('.s>span'))
+
+    		}
+
+    		function imgTime(arr,tnum,select){
+    			arr=[]
+    			for(i=0;i < String(tnum).length; i++){
+    				arr.push(String(tnum).substring(i,i+1))
+    select.eq(i).animate({
+    	backgroundPositionY:-(arr[i]*100)
+    })
+    			}
+    		}
+
+
+    	})
+    </script>
+</head>
+<body>
+
+    <div class="h">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="m">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="s">
+		<span></span>
+		<span></span>
+	</div>
+
+</body>
+</html>

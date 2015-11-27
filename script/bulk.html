@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+    $(function(){
+        var liwidth=$('.slide li').outerWidth(true);
+
+        $('.slide li').each(function(i,e){
+                $(e).css('left',liwidth*i)
+        })
+        var clickidx=0
+        $('.next').click(function(){
+            clickidx++
+            $('.slide li').each(function(i,e){
+                $(e).animate({left:'-='+liwidth})
+            })
+            if(clickidx==$('.slide li').length-3){
+                clickidx=0
+                $('.slide li').each(function(i,e){
+                    $(e).animate({
+                        left:liwidth*i
+                    })
+                })
+            }
+        })
+    })
+
+    </script>
+    <style>
+    *{margin:0;padding:0}ul{list-style:none}.slide{margin:0 auto;width:320px;height:120px;border:1px #F00 solid;background:#CCC}
+    .slide ul{position:relative;margin:10px;height:100px;background:#FFF}
+    .slide ul li{position:absolute;box-sizing:border-box;width:100px;height:100px;border:1px #F00 solid}
+    </style>
+</head>
+<body>
+
+<div class="slide">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</div>
+
+<button class="next">next</button>
+<button class="prev">prev</button>
+
+</body>
+</html>

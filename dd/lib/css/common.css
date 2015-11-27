@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+@font-face {
+		font-family:'NanumBarunGothic';
+		src:url('../font/NanumBarunGothic.eot');
+		src:url('../font/nanum.eot?#iefix') format('embedded-opentype'), url('../font/NanumBarunGothic.woff') format('woff'), url('../font/nanum.ttf') format('truetype');
+		font-weight:normal;
+		font-style:normal; 
+		}
+
+/*reset*/
+html,body{height:100%}
+*{margin:0; padding:0}
+ul,ol{list-style:none;}
+img{border:0 none;vertical-align:top;}
+fieldset{border:0 none;}
+legend{text-indent:-99999px;position:absolute;left:-999999px;top:-99999px; font-size:0}
+a{text-decoration:none;color:#000000}
+body{font-family:NanumBarunGothic}
+
+/*option*/
+#wrap{width:1100px;height:100%;margin:0 auto}
+#content_wrap{width:1280px;height:100%;margin:0 auto}
+#more_btn{display:inline-block;width:121px;height:34px;border-radius:3px;position:absolute;border:2px #fff solid;}
+
+/*hide_top css*/
+#hide_top{width:100%;height:0;background-color:#111111;color:#ffffff;font-size:14px; overflow:hidden; position:relaitve}
+#hide_top ul{width:110%}
+#hide_top li{float:left;}
+#hide_top .hide_top_left {width:528px;height:90px;margin-top:13px;position:relative}
+#hide_top .hide_top_left .hide_top_icon{width:43px;height:63px;margin-top:15px;margin-left:20px;}
+#hide_top .hide_top_left .hide_top_icon img{width:100%;height:100%}
+#hide_top .hide_top_left .hide_top_text{display:inline-block;margin-left:90px;margin-top:15px;position:absolute;top:0;line-height:1.4em}
+#hide_top .hide_top_left .hide_top_text strong{font-size:16px;line-height:1.8em}
+#hide_top .hide_top_left .hide_top_button{margin-left:340px;position:absolute;bottom:3px}
+#hide_top .hide_top_left .hide_top_button a{margin-left:5px;display:inline-block;border:1px #ffffff solid;border-radius:3px;width:70px;height:24px;color:#fff;font-size:12px;line-height:24px;text-align:center}
+#hide_top .hide_top_right{width:571px;height:90px;margin-top:13px;position:relative}
+#hide_top .hide_top_right .hide_top_icon{width:90px;height:61px;margin-top:20px;margin-left:25px}
+#hide_top .hide_top_right .hide_top_icon img{width:100%;height:95%}
+#hide_top .hide_top_right .hide_top_text{display:inline-block;margin-left:130px;margin-top:15px;position:absolute;top:0;line-height:1.4em}
+#hide_top .hide_top_right .hide_top_text strong{font-size:16px;line-height:1.8em}
+#hide_top .hide_top_right .hide_top_button{margin-left:460px;position:absolute;bottom:3px}
+#hide_top .hide_top_right .hide_top_button a{margin-left:5px;display:inline-block;border:1px #ffffff solid;border-radius:3px;width:70px;height:24px;color:#fff;font-size:12px;line-height:24px;text-align:center}
+
+/*top css*/
+#top{width:100%;height:123px;background-color:#F6F5EF;font: 13px Avenir,Arial,georgia;border-top:2px #000 solid;border-bottom:1px #000 solid;position:relative;z-index:10}
+#top #wrap{position:relative}
+#top h1{float:left;}
+#top h1 a{display:inline-block;width:75px;height:75px;margin-top:22.5px;}
+#top .top_menu {position:absolute;left:540px;top:15px;}
+#top .top_menu span{display:inline-block;width:1px;height:12px;background-color:#E5E5E5;position:absolute;top:2px}
+#top .top_menu li{float:left;} 
+#top .top_menu li a{height:20px;text-align:center;display:inline-block;color:#555555}
+#top .top_menu li:nth-child(1) a{width:76px}
+#top .top_menu li:nth-child(2) a{width:107px}
+#top .top_menu li:nth-child(3) a{width:181px}
+#top .top_menu li:nth-child(4) a{width:97px}
+#top .top_menu_button span{display:none;border:1px #CCCCCC solid;width:34px;height:34px;border-radius:4px;background-color:#fff;position:absolute;line-height:34px;top:5px;right:55px}
+#top .top_menu_button span input[type="text"]{width:123px;height:22px;padding:0 10px;border:none;color:#B6B6B6;font-size:12px;line-height:12px;}
+#top .top_menu_button span input[type="submit"]{width:34px;height:34px;background:none;border:none;position:absolute;top:0;right:0;text-indent:-999999px;font-size:0;background:#fff url("../images/starbucks_main/icon_magnifier_black.png") no-repeat 7px 6px ;}
+#top .top_menu_button input[type="button"]{top:6px;right:56px;border-radius:4px;width:34px;height:34px;border:1px #CCCCCC solid;position:absolute;text-indent:-999999px;font-size:0;background:#fff url("../images/starbucks_main/icon_magnifier_black.png") no-repeat 7px 6px;}
+#top #find_top{position:absolute;top:0;right:0;width:53px;height:45px}
+#top #bng .first_bng{float:right;margin-top:46px}
+#top #bng .first_bng>li{float:left;margin-top:10px}
+#top #bng .first_bng>li.on>a{background-color:#2c2a29;color:#5c9900}
+#top #bng .first_bng>li.on>div{display:block}
+#top #bng .first_bng>li>a{height:57px;display:block;text-align:center;padding:10px 20px 0;}
+#top #bng .second_bng{z-index:12;position:absolute;width:100%;left:0;display:none;font-family:NanumBarunGothic}
+#top #bng .second_bng.on{display:block}
+#top #bng .second_bng .dl_list{height:auto;overflow: hidden;padding:20px 0 0;}
+#top #bng .second_bng .dl_list>dl{width:20%;float:left;font-size:12px}
+#top #bng .second_bng .dl_list>dl.last_bng{padding-bottom:20px}
+#top #bng .second_bng .dl_list>dl>dt>a{display:block;font-size: 14px;color:#fff;font-weight:bold;padding:3px 0 12px}
+#top #bng .second_bng .dl_list>dl>dd{padding-top:3px;padding-bottom:3px}
+#top #bng .second_bng .dl_list>dl>dd>a{color:#999}
+#top #bng .second_bng_most{margin-bottom:90px}
+#top #bng .second_bng_notice{margin-bottom:110px}
+#top #bng .second_bng .dl_paddingtop{padding-top:20px}
+#top .second_bng .bng_pro{clear:both;font-size:12px;padding-top:25px;overflow:hidden;}
+#top .second_bng .bng_pro .bng_pro_left{width:720px;height:106px;float:left;}
+#top .second_bng .bng_pro .bng_pro_left h3 a{color:#999999;font-size:12px;}
+#top .second_bng .bng_pro .bng_pro_left h3.se_h3{margin-top:8px}
+#top .second_bng .bng_pro .bng_pro_left p{color:#64a70b;}
+#top .second_bng .bng_pro .bng_pro_right{width:380px;height:115px;float:right;}
+#top .second_bng .bng_pro .bng_pro_right .bng_pro_right_img{float:left;}
+#top .second_bng .bng_pro .bng_pro_right .bng_pro_right_text{width:206px;height:90px;float:right;}
+#top .second_bng .bng_pro .bng_pro_right .bng_pro_right_text h3{font-size:12px;color:#999999;margin-bottom:15px}
+#top .second_bng .bng_pro .bng_pro_right .bng_pro_right_text p{color:#64a70b}
+#top .gnb_bg{display:none;position:relative;z-index:10}
+#top .gnb_bg .gnb_1{height:0;background-color:#2c2a29;width:100%}
+#top .gnb_bg .gnb_2{width:100%;height:140px;background:url(../../lib/images/starbucks_main/gnb_sub_txbg.jpg);}
+
+
+/*footer css*/
+#footer{border-bottom:1px solid;height:460px;} 
+#footer #wrap{position:relative;overflow:hidden;}
+#footer .footer_gnb{width:100%;height:160.5px;padding-top:35px;background-color:#2C2A29;color:#FFFFFF;padding-bottom:40px}
+#footer .footer_gnb #wrap .footer_gnb1>li{width:220px;line-height:40px;float:left;}
+#footer .footer_gnb #wrap .footer_gnb1>li>a{font-size:14px;color:#fff;}
+#footer .footer_gnb #wrap .footer_gnb1>li>ul>li{line-height:24px;font-size:12px}
+#footer .footer_gnb #wrap .footer_gnb1>li>ul>li>a{color:#fff;}
+#footer .footer_award{background-color:#282828;height:80px;position:relative;}
+#footer .footer_award #wrap{margin:0 auto;width:1140px;overflow:hidden}
+#footer .footer_award #wrap ul>li{position:absolute;top:7px;display:none;width:105%;}
+#footer .footer_award #wrap ul>li:first-child{display:block}
+#footer .footer_award #wrap ul>li a{display:block;float:left}
+#footer .footer_award #wrap ul>li a::after{content:"";display:block;clear:both}
+#footer .footer_award .footer_button{position:absolute;top:50px;height:12px;left:50%;margin-left:-35px;}
+#footer .footer_award .footer_button div{display:inline-block}
+#footer .footer_award .footer_button .auto_btn .play{width:9px;height:12px;border:0 none;background:url(../../lib/images/starbucks_main/footer_award_play.png) no-repeat -10px center;}
+#footer .footer_award .footer_button .auto_btn .pause{background-position:0 center}
+#footer .footer_award .footer_button .btn_dot button{width:13px;height:12px;margin-left:8px;border:0 none;background:url(../../lib/images/starbucks_main/footer_award_pager.png) no-repeat -13px center;}
+#footer .footer_award .footer_button .btn_dot button.on{background-position:0 0}
+#footer .company_info{background-color:#2C2A29;height:150px;padding-top:30px;padding-bottom:35px}
+#footer .company_info .company_menue{margin-left:20%;}
+#footer .company_info .company_menue>li{float:left;padding:0 10px;}
+#footer .company_info .company_menue>li>a{color:#CCCCCC;font-size:12px;}
+#footer .company_info .company_menue>li:first-child>a{color:#00B045;font-weight:bold}
+#footer .company_info .btn_box{display:inline-block;margin-left:33%;margin-top:10px}
+#footer .company_info .btn_box>div{border:2px #fff solid; border-radius:3px;float:left;width:90px;height:30px;padding:0 10px;line-height:30px;text-align: center;margin:0 5px 0 3px}
+#footer .company_info .btn_box>div .footer_button{font-size:12px;color:#fff;}
+#footer .company_info .company{margin:25px 0 5px 147px;}
+#footer .company_info .company li{float:left;font-size:12px;margin:0 12px;color:#ccc;padding-bottom:5px}
+#footer .company_info span{display:inline-block;font-size:12px;width:312px;height:40px;line-height:40px;color:#ccc;margin-left:40%}
+
+
+

@@ -1,0 +1,84 @@
+/*main css*/
+#main_container{height:auto}
+#main_container .main_content{height:646px;background:url(../../lib/images/starbucks_main/winter_bg.jpg);position:relative;}
+#main_container .main_content .main_light{width:876px;height:886px;position:absolute;top:-121px;left:135px}
+#main_container .main_content .main_light .main_light_img{background:url(../../lib/images/starbucks_main/main_light11.png);display:inline-block; width:876px;height:886px}
+#main_container .main_content .main_light h2{font-size:0;text-indent:-99999px;
+                                             display:inline-block;position:absolute;top:400px;background:url(../../lib/images/starbucks_main/ttl_dm.png);
+                                             width:331px;height:163px;top:327px;left:265px}
+#main_container .main_content #more_btn{top:417px;left:498px}
+#main_container .main_content #more_btn a{display: block;width:100%;height:100%;line-height:34px;text-align: center;color:#fff;font-size:14px}
+#main_container .main_content .main_coffee01{background:url(../../lib/images/starbucks_main/winter_mug01.png);width:610px;height:467px;position:absolute;top:-43px;right:378px;}
+#main_container .main_content .main_coffee01_text{display:inline-block;font-size:0;text-indent:-999999px;background:url(../../lib/images/starbucks_main/coffee_name01.png);width:160px;height:72px;position:absolute;top:33px;right:485px }
+#main_container .main_content .main_coffee02{background:url(../../lib/images/starbucks_main/winter_mug02.png);width:596px;height:513px;position:absolute;top:133px;right:40px;}
+#main_container .main_content .main_coffee02_text{display:inline-block;font-size:0;text-indent:-999999px;background:url(../../lib/images/starbucks_main/coffee_name02.png);width:158px;height:53px;position:absolute;bottom:166px;right:380px }
+#main_container .main_content .main_coffee03{background:url(../../lib/images/starbucks_main/winter_mug03.png);width:272px;height:321px;position:absolute;bottom:-116px;right:585px;}
+#main_container .main_content .main_coffee03_text{display:inline-block;font-size:0;text-indent:-999999px;background:url(../../lib/images/starbucks_main/coffee_name03.png);width:94px;height:53px;position:absolute;bottom:36px;right:870px }
+
+#main_container .main_bar01{height:71px;position:relative;background-color:#A2172C }
+#main_container .main_bar01 #content_wrap {background:url(../../lib/images/starbucks_main/efreq_main_bg.jpg);position:relative;}
+#main_container .main_bar01 #content_wrap a{display:block;font-size:0;text-indent:-999999px;width:494px;height:71px;background:url(../../lib/images/starbucks_main/efreq_main_txt.png);}
+#main_container .main_bar01 #content_wrap i{width:220px;height:71px;display:inline-block;position:absolute;top:0;right:121px;background:url(../../lib/images/starbucks_main/efreq_main_icon.png)}
+
+#main_container .main_bar02{position:relative;height:62px;}
+#main_container .main_bar02 .main_bar02_bgb{background-color:#000;width:950px;height:62px;position:absolute;top:0}
+#main_container .main_bar02 .main_bar02_bgw{background-color:#F5F4EF;width:950px;height:62px;position:absolute;top:0;right:0}
+#main_container .main_bar02 #content_wrap{position:absolute;top:0;left:50%;margin-left:-640px}
+#main_container .main_bar02 #content_wrap .main_bar02_l{width:730px;height:62px;background-color:#000;float:left;}
+#main_container .main_bar02 #content_wrap .main_bar02_l .main_bar02_l_inner{width:621px;height:36px;margin:13px 0 0 89px;position:relative;}
+#main_container .main_bar02 #content_wrap .main_bar02_l dl>dt{margin-top:10px;float:left;}
+#main_container .main_bar02 #content_wrap .main_bar02_l dl>dd>ul{width:520px;height:24px;float:left;margin-top:7px;line-height:24px;position:relative;border:1px #fff solid;overflow:hidden;}
+#main_container .main_bar02 #content_wrap .main_bar02_l dl>dd>ul>li{height:28px;display:none;position:absolute;}
+#main_container .main_bar02 #content_wrap .main_bar02_l dl>dd>ul>li.on{display:block}
+#main_container .main_bar02 #content_wrap .main_bar02_l dl>dd>ul>li>a{display:block; padding: 0 20px;line-height:28px;color:#fff;font-size:14px}
+#main_container .main_bar02 #content_wrap .main_bar02_l .notice_more span{display:inline-block;width:36px;height:36px;position:absolute;top:0;background:url(../../lib/images/starbucks_main/btn_notice_plus.png)no-repeat scroll 0 0/ 100% auto}
+#main_container .main_bar02 #content_wrap .main_bar02_l .notice_more a{display:block;width:100%;height:100%;font-size:0;text-indent:-99999px}
+
+#main_container .main_bar02 #content_wrap .main_bar02_r{float:right;width:550px;height:62px;position:relative}
+#main_container .main_bar02 #content_wrap .main_bar02_r a {display:block;width:234px;height:36px;left:37%;position:absolute;top:13px}
+#main_container .main_bar02 #content_wrap .main_bar02_r a div{height:17px;text-indent:-99999px;font-size:0;background:url(../../lib/images/starbucks_main/prom_ttl_b.png) no-repeat scroll 0% 0%/100%;width:129px;position:absolute;top:9px}
+#main_container .main_bar02 #content_wrap .main_bar02_r a span{display:inline-block;position:absolute;right:0}
+
+#main_container .hide_promotion{ height:658px;width:100%;background-color:#F6F5F0}
+#main_container .hide_promotion #wrap{height:541px;position:relative;padding-top:40px}
+#main_container .hide_promotion .promotion_btn_l{width:131px;height:553px;position:absolute;left:0;}
+#main_container .hide_promotion .promotion_btn_l .hide_promotion_l{background:url(../../lib/images/starbucks_main/arrow_left_on.png) no-repeat scroll center center;width:55px;height:55px;border:2px solid; border-radius:27.5px;position:absolute;right:3%;top:225px;z-index:30}
+#main_container .hide_promotion .promotion_btn_r{width:131px;height:553px;position:absolute;right:0;top:0}
+#main_container .hide_promotion .promotion_btn_r .hide_promotion_r{background:url(../../lib/images/starbucks_main/arrow_ringt_on.png) no-repeat scroll center center;width:55px;height:55px;border:2px solid; border-radius:27.5px;position:absolute;left:3%;top:225px;z-index:30}
+#main_container .hide_promotion ul li{display:none;}
+#main_container .hide_promotion ul li.on{display:block}
+#main_container .hide_promotion ul li div{width:819px;height:553px;position:absolute;margin-left:-409.5px;left:50%}
+#main_container .hide_promotion ul li span{display:inline-block;width:121px;line-height:34px;border:2px #000 solid;border-radius:3px;position:absolute;bottom:0;left:50%;margin-left:-60.5px}
+#main_container .hide_promotion ul li span a{width:100%;text-align:center;display:block;font-size:14px}
+#main_container .hide_promotion .hide_promotion_btn{width:1100px;height:12px;margin:0 auto;margin-top:30px}
+#main_container .hide_promotion .hide_promotion_btn .hide_auto_btn{display:inline-block;height:12px;width:9px;position:relative;margin-left:470px}
+#main_container .hide_promotion .hide_promotion_btn .hide_auto_btn .stop{width:9px;height:12px;border:0 none;background:url(../../lib/images/starbucks_main/main_prom_play.png);position:absolute;}
+#main_container .hide_promotion .hide_promotion_btn .hide_auto_btn .play{background:url(../../lib/images/starbucks_main/main_prom_stop.png)}
+#main_container .hide_promotion .hide_promotion_btn .hide_btn_dot{width:147px;height:12px;display:inline-block;position:relative; }
+#main_container .hide_promotion .hide_promotion_btn .hide_btn_dot button.on{background:url(../../lib/images/starbucks_main/main_prom_on.png)}
+#main_container .hide_promotion .hide_promotion_btn .hide_btn_dot button{background:url(../../lib/images/starbucks_main/main_prom_off.png);width:13px;height:12px;border:none;display:block;margin-left:8px;float:left}
+
+#main_container .main_myrewards{}
+#main_container .main_myrewards .bg1{}
+#main_container .main_myrewards .bg2{}
+#main_container .main_myrewards #wrap{}
+#main_container .main_myrewards #wrap .main_myrewards_bg{}
+#main_container .main_myrewards #wrap .main_myrewards_text{}
+#main_container .main_myrewards #wrap .main_myrewards_btn{}
+#main_container .main_myrewards #wrap .main_myrewards_btn li{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

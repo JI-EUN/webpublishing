@@ -66,18 +66,18 @@ $(function(){
  		}else {
 
  		}
-		return false
+		// return false
 	})
 	var slidemove=setInterval(function(){
 		$('.slidebanner .prev').click()
-	},1000)
+	},4500)
 	$('.slidebanner ul').on({
 		mouseenter:function(){
 			clearInterval(slidemove)
 		},mouseleave:function(){
 			slidemove=setInterval(function(){
 			   $('.slidebanner .prev').click()
-		   },1000)
+		   },4500)
 		}
 	})
 	//4번문제(fade)
@@ -89,18 +89,18 @@ $(function(){
 			fadeidx=0
 		}
 	}
-	var auto=setInterval(function(){fadeinout('next')},1000)
+	var fademove=setInterval(function(){fadeinout('next')},4800)
 	$('.fadebanner ul').on({
 		mouseenter:function(){
-			clearInterval(auto)
+			clearInterval(fademove)
 		},mouseleave:function(){
-			auto=setInterval(function(){fadeinout('next')},1000)
+			fademove=setInterval(function(){fadeinout('next')},4800)
 		}
 	})
 	$('.fadebanner li a').click(function(){
 		fadeidx=$(this).parent().index()
 		$('.fadebanner li').eq(fadeidx).addClass('on').find('img').fadeIn().parent().siblings().removeClass('on').find('img').fadeOut()
-		return false
+		// return false
 	})
 
 
@@ -111,7 +111,7 @@ $(function(){
 		var movlist=$(this).children('a').attr('href')
 		var movurl="https://www.youtube.com/embed/"+movlist+"?rel=0&amp;controls=0&amp;showinfo=0"
 		$('.f-type .movie-view iframe').attr('src',movurl)
-		return false
+		// return false
 	})
 
 	//6번문제(wingbanner)
@@ -119,11 +119,14 @@ $(function(){
 		wingbanner()
 	})
 
+	var ttt;
+
 	$(window).scroll(function(){
 		var wingp=$(this).scrollTop()
 		$('.wing').stop().animate({
 			top:wingp
 		})
+		ttt=wingp
 	})
 
 	$(window).trigger('resize')
@@ -140,26 +143,93 @@ $(function(){
 		$('.blind').css({'width':'100%','height':'100%','position':'fixed','left':0,'top':0,'background-color':'#000','display':'none'})
 		$('.blind').fadeTo(1000,0.5)
 	}
-	function poP(box){
+	 function poP(box){
 		blind()
-		var boxWidth=box.width()
-		var boxHeight=box.height()
-		box.append('<button class="close">close</button>')
-		box.css({'position':'absolute','left':'50%','margin-left':-boxWidth/2,'top':'50%','margin-top':-boxHeight/2,'z-index':1,'dispaly':'block'})
-		box.fadeIn(1000,function(){
-			$(this).animate({top:'50%'},function(){
-				$(this).animate({top:'20%'},1000)
-			})
-		})
-	}
-	$('.btngroup button').click(function(){
-		var idx=$(this).index()/2
-		alert(idx)
-		poP($('.pop').eq(idx))
+	 	var boxWidth=box.width()
+	 	var boxHeight=box.height()
+	 	box.append('<button class="close">close</button>')
+	 	box.css({'position':'fixed','left':'50%','margin-left':-boxWidth/2,'z-index':1,'dispaly':'block'})
+	 	box.fadeIn(1000,function(){
+	 		$(this).animate({top:'60%'},function(){
+	 			$(this).animate({top:'50%','margin-top':-boxHeight/2},1000)
+	 		})
+	  	})
+	  }
+	 function close(){
+	 	$('.blind').fadeOut(function(){
+	 		$(this).remove()
+	 	})
+	 	$('.pop').fadeOut(function(){
+	 		$(this).css({'top':'-1000px','margin-top':0})
+	 		$(this).find('.close').remove()
+	 	})
+	 }
+	 $('.btngroup button').click(function(){
+	 	var idx=$(this).index()/2
+	 	console.log(idx)
+	 	poP($('.btngroup .pop').eq(idx))
 
-	})
+	 })
+
+	 $('.pop').on('click','.close',function(){
+	 	close()
+	 })
 
 
 
+
+		//쌤이 알려준 방식
+	// $('.btngroup but1').click(function(){
+	// 	var phtml= $(this).next('div').html()
+	// 	console.log(phtml)
+	// 	blind()
+	// 	popup(400,400,phtml)
+	// 	close()
+	// })
+	// $('.btngroup but2').click(function(){
+	// 	var phtml= $(this).next('div').html()
+	// 	console.log(phtml)
+	// 	blind()
+	// 	popup(500,300,phtml)
+	// 	close()
+	// })
+	// $('.btngroup but3').click(function(){
+	// 	var phtml= $(this).next('div').html()
+	// 	console.log(phtml)
+	// 	blind()
+	// 	popup(400,0,phtml)
+	// 	close()
+	// })
+	// $('.btngroup but4').click(function(){
+	// 	var phtml= $(this).next('div').html()
+	// 	console.log(phtml)
+	// 	blind()
+	// 	popup(300,600,phtml)
+	// 	close()
+	// })
+	//
+	// function close(){
+	// 	$('.poppage').prepend('<button class="close">닫기</button>')
+	// 	$('.close').css({'position':'absolute','right':'20px'})
+	//
+	// 	$('.close').click(function(){
+	// 		$('.blind').fadeOut(function(){
+	// 			$(this).remove()
+	// 		})
+	// 		$('.poppage').fadeOut(function(){
+	// 			$(this).remove()
+	// 		})
+	// 	})
+	// }
+	//
+	// function popup(ww, hh ,html){
+	// 	$('body').append('<div class="poppage popstyle">'+'<div>'+html+'</div>'+'</div>')
+	//
+	// 	$('.poppage').css({'width':ww,'height':hh,'background-color':'#fff','position':'absolute','left':'50%','margin-left':-ww/2,'padding':'20px'}).animate({top:ttt+400},function(){
+	// 		$(this).animate({ top:ttt+200})
+	// 	})
+	//
+	//
+	// }
 
 })

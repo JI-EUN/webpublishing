@@ -1,0 +1,42 @@
+.ie7IB(){display:inline-block;
+          *display:inlne;
+           *zoom:1;}
+.bd(){
+        border:1px #000 solid;
+}
+
+*{margin:0;padding:0}
+html,body{height:100%}
+.menue{border:1px #f00 solid;
+       height:80px;
+       ul{
+           line-height:80px;
+           font-size:12px;
+           text-align:center;
+           li{
+               .ie7IB();
+               a{
+
+                   fon-size:16px;
+                   text-decoration:none;
+                   display:block;
+                   width:150px;
+                   &:hover{
+                        background:#333;
+                        color:#fff
+                   }
+               }
+              ul{
+                   display:none;
+                  text-align:initial;
+                  position:absolute;
+                  .bd;
+                  li{
+                      height:initial;
+                      line-heihgt:initial;
+                      display:initial;
+                  }
+              }
+           }
+       }
+    }

@@ -30,11 +30,30 @@
             $(window).resize(function(){
                 wingbanner()
             })
+
+
+            function wing(x){
+
+                $('.wing').stop().animate({
+                    top:x
+                })
+
+            }
+
+
+            function openani(){
+                
+            }
+
             $(window).scroll(function(){
                 var scp=$(this).scrollTop()
-                $('.wing').stop().animate({
-                    top:scp
-                })
+                wing(scp)
+
+
+
+
+
+                if()
             })
 
             $(window).trigger('resize')

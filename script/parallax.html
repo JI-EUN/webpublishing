@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <style>
+    *{margin:0;padding:0}
+    ul,ol{list-style:none;}
+    html,body{height:100%}
+    #wrap{height:100%;width:100%}
+    #wrap section{width:100%;
+                 height:100%;
+                 border:1px solid;
+                 -webkit-background-size: cover;
+                 background-size: cover;
+                    }
+    section.content1{background-image: url(http://www.ok-studios.de/fileadmin/templates/okstudios/images/home_bg.jpg);}
+    section.content2{background-image: url(http://www.ok-studios.de/fileadmin/templates/okstudios/images/design_bg.jpg);}
+    section.content3{background-image: url(http://www.ok-studios.de/fileadmin/templates/okstudios/images/technik_bg.jpg);}
+    section.content4{background-image: url(http://www.ok-studios.de/fileadmin/templates/okstudios/images/lab_bg.jpg);}
+    section.content5{background-image: url(http://www.ok-studios.de/fileadmin/templates/okstudios/images/about_bg.jpg);}
+    </style>
+
+    <script>
+    $(document).ready(function(){
+        var spot=[]
+        var heightspot=0
+
+        $('#wrap>section').each(function(i,e){
+            console.log($(e).off)
+            spot.push($(e).offset().top)
+            $(e).css('top',spot[i])
+            heightspot+=$(e).height()
+        }).css('position','fixed')
+
+        $('#wrap').height(heightspot)
+
+        $(window).scroll(function(){
+            var scp=$(this).scrollTop()
+            $('#wrap>section').each(function(i,e){
+                var tt=-1*scp+spot[i]
+                if(scp>spot[i])tt*=0.5;
+                $(e).css('top',tt)
+            })
+        })
+    })
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <section class="content1"></section>
+        <section class="content2"></section>
+        <section class="content3"></section>
+        <section class="content4"></section>
+        <section class="content5"></section>
+    </div>
+
+</body>
+</html>
